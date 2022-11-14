@@ -1,5 +1,4 @@
-import camelcase
+from math import pi
 
-c = camelcase.CamelCase()
-txt = "hello world"
-print(c.hump(txt))
+d =  int(input("Введите требуемую точност числа Пи: "))
+print(f'Число Пи: {round(pi, d)}')
