@@ -3,14 +3,11 @@
 k = int(input('Введите число: '))
 
 def fibonacci(k):
-    nums = []
-    a, b = 1, 1
-    for i in range (k):
-        nums.append(a)
-        a, b = b, a + b
-    a, b = 0, 1
-    for i in range (k+1):
-        nums.insert(0, a)
-        a, b = b, a - b
-    return nums
+    fib = [0, 1]
+    for i in range (k-1):
+        end = fib[-1]+fib[-2]
+        start = (-1)**(i+1)*end
+        fib.append(end)
+        fib.insert(0,start)
+    return fib
 print(fibonacci(k))
