@@ -22,6 +22,6 @@ s = int(input('Введите натуральное число степени:'
 # result = polynom(s)
 # print(result)
 
-file =  open('C:\\Users\\Михаил\\Desktop\\GB\\Python\\Python\\Seminar_4\\Polynominal.txt', 'w')
+file =  open('C:\\Users\\Михаил\\Desktop\\GB\\Python\\Python\\Seminar_4\\Polynominal_Task_4.txt', 'w')
 file.writelines(f'{polynom(s)}\n')
 file.close()
