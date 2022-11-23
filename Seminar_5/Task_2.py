@@ -58,4 +58,68 @@ def player_vs_player():
     if count == 0:
         print(f'{player_1} ПОБЕДИЛ')
 
-player_vs_player()
+# player_vs_player()
+
+def player_vs_bot():
+    sweet_total = 2021
+    max_take = 28
+    count = 0
+    player_1 = input('\nВведите имя 1 игрока: ')
+    player_2 = "bot"
+
+    print('\nДля начала опеределим кто первый начнет игру.\n')
+
+    x = r.randint(1, 2)
+    if x != 1:
+        print(f'{player_1} ходит первым !')
+    else:
+        temp = player_2
+        player_2 = player_1
+        player_1 = temp
+        print(f'{player_1} ходит первым !')
+
+    while sweet_total > 0:
+        if count == 0:
+            if player_1 == "bot":
+                if sweet_total>28:
+                    step = r.randint(1, max_take+1)
+                else:
+                    step = sweet_total
+                print(f'\nХод: {player_1} = {step}')
+            else:
+                step = int(input(f'\nХод: {player_1} = '))
+                if step > sweet_total or step > max_take:
+                    step = int(input(
+                        f'\nМожно взять только {max_take} конфет, попробуй еще раз: '))
+            sweet_total = sweet_total - step
+            if sweet_total > 0:
+                print(f'\nОсталось {sweet_total}')
+                count = 1
+            else:
+                print('Игра окончена')
+
+        if count == 1:
+            if player_2 == "bot":
+                if sweet_total>28:
+                    step = r.randint(1, max_take+1)
+                else:
+                    step = sweet_total
+                print(f'\nХод: {player_2} = {step}')
+            else:
+                step = int(input(f'\nХод: {player_2} '))
+                if step > sweet_total or step > max_take:
+                    step = int(input(
+                        f'\nМожно взять только {max_take} конфет, попробуй еще раз: '))
+            sweet_total = sweet_total - step
+        if sweet_total > 0:
+            print(f'\nОсталось {sweet_total}')
+            count = 0
+        else:
+            print('Игра окончена')
+
+    if count == 1:
+        print(f'{player_2} ПОБЕДИЛ')
+    if count == 0:
+        print(f'{player_1} ПОБЕДИЛ')
+
+player_vs_bot()
