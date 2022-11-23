@@ -80,7 +80,7 @@ def player_vs_bot():
         if count == 0:
             if player_1 == "bot":
                 if sweet_total>28:
-                    step = r.randint(1, max_take+1)
+                    step = r.randint(1, max_take)
                 else:
                     step = sweet_total
                 print(f'\nХод: {player_1} = {step}')
@@ -99,7 +99,7 @@ def player_vs_bot():
         if count == 1:
             if player_2 == "bot":
                 if sweet_total>28:
-                    step = r.randint(1, max_take+1)
+                    step = r.randint(1, max_take)
                 else:
                     step = sweet_total
                 print(f'\nХод: {player_2} = {step}')
