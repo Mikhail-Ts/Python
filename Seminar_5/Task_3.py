@@ -9,8 +9,6 @@ def print_map(map):
         + str(map[2]).replace("'","").replace(",","") + '\n'
     print(map)
 print_map(map)
-
-
  
 # Проверка победителя:
 def get_result():
@@ -36,10 +34,12 @@ def get_result():
         (map[0][2] == map[1][2]== map[2][2] == "O"):
             win = "Победил Player_2"   
     return win
+
 count = 0
 game_over = False
 Player1 = True
 
+# Игра
 while game_over == False:
 
     if Player1 == True and count == 0:
